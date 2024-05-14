@@ -19,7 +19,7 @@ type Service struct {
 }
 
 var (
-	dbPath     = fmt.Sprintf("%s/%s", os.Getenv("PWD"), "svdb.json")
+	dbPath     = fmt.Sprintf("%s/%s", os.Getenv("HOME"), ".svdb")
 	logPrefix  = "[svdb]"
 	validFlags = []string{"p", "json", "m"}
 )
