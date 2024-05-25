@@ -12,6 +12,7 @@ Copy `svdb` binary to a directory in your PATH. Place the `svdb.json` file in th
 svdb [-p <port,numbers,comma-separated>] [-m <regex-to-match>]
 ```
 
+
 Example:
 
 ```bash
