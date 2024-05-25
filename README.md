@@ -4,7 +4,47 @@ the service database (tcp & ucp).
 
 ## Installation
 
-Copy `svdb` binary to a directory in your PATH. Place the `svdb.json` file in this same directory or the tool will not be able to find it.
+### Windows
+
+#### x64
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-windows-x64.exe -o svdb.exe
+```
+
+#### ARM
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-windows-arm64.exe -o svdb.exe
+```
+
+### Linux
+
+#### x64
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-linux-x64 -o ~/.local/bin/svdb
+```
+
+#### ARM
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-linux-arm64 -o ~/.local/bin/svdb
+```
+
+### macOS
+
+#### Intel (x64)
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-macos-x64 -o ~/.local/bin/svdb
+```
+
+#### Apple Silicon (ARM)
+
+```bash
+curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-macos-arm64 -o ~/.local/bin/svdb
+```
 
 ## Usage
 
