@@ -1,3 +1,3 @@
-module svdb
+module svq
 
 go 1.22.2

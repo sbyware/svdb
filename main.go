@@ -11,8 +11,8 @@ import (
 )
 
 var (
-	DB_PATH    = fmt.Sprintf("%s/%s", os.Getenv("HOME"), ".svdb")
-	LOG_PREFIX = "[svdb]"
+	DB_PATH    = fmt.Sprintf("%s/%s", os.Getenv("HOME"), ".svq")
+	LOG_PREFIX = "[svq]"
 )
 
 type Service struct {
@@ -109,7 +109,7 @@ func main() {
 		}
 		matchedServices = services
 	default:
-		fmt.Println("svdb, the service database.")
+		fmt.Println("svq, the service database.")
 		flag.PrintDefaults()
 		return
 	}

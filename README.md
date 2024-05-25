@@ -1,6 +1,6 @@
-# svdb
+# svq
 
-the service database (tcp & ucp).
+service query engine
 
 ## Installation
 
@@ -9,13 +9,13 @@ the service database (tcp & ucp).
 #### x64
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-windows-x64.exe -o svdb.exe
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-x64.exe -o svq.exe
 ```
 
 #### ARM
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-windows-arm64.exe -o svdb.exe
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-arm64.exe -o svq.exe
 ```
 
 ### Linux
@@ -23,13 +23,13 @@ curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-windows-ar
 #### x64
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-linux-x64 -o ~/.local/bin/svdb
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-x64 -o ~/.local/bin/svq
 ```
 
 #### ARM
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-linux-arm64 -o ~/.local/bin/svdb
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-arm64 -o ~/.local/bin/svq
 ```
 
 ### macOS
@@ -37,31 +37,31 @@ curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-linux-arm6
 #### Intel (x64)
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-macos-x64 -o ~/.local/bin/svdb
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-x64 -o ~/.local/bin/svq
 ```
 
 #### Apple Silicon (ARM)
 
 ```bash
-curl -L https://github.com/sbyware/svdb/releases/download/latest/svdb-macos-arm64 -o ~/.local/bin/svdb
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-arm64 -o ~/.local/bin/svq
 ```
 
 ## Usage
 
 ```bash
-svdb [-p <port,numbers,comma-separated>] [-m <regex-to-match>]
+svq [-p <port,numbers,comma-separated>] [-m <regex-to-match>]
 ```
 
 
 Example:
 
 ```bash
-svdb -p 80,443 -m "http"
+svq -p 80,443 -m "http"
 ```
 
 ## Configuration
 
-The `.svdb` file (copied to ~/.svdb) contains the list of services and their respective ports. The file is a JSON array with the following structure:
+The `.svq` file (copied to ~/.svq) contains the list of services and their respective ports. The file is a JSON array with the following structure:
 
 ```json
 [
@@ -78,36 +78,36 @@ The `.svdb` file (copied to ~/.svdb) contains the list of services and their res
 
 ## the `-select` flag
 
-The `-select` flag allows you to filter the output of `svdb` by a specific field. The flag takes a string as an argument and will filter the output based on the value of the field.
+The `-select` flag allows you to filter the output of `svq` by a specific field. The flag takes a string as an argument and will filter the output based on the value of the field.
 
 #### Get all services with port 80 or 443
 ```bash
-svdb -p 80,443 -select port
+svq -p 80,443 -select port
 ```
 
 #### Get all services with port 80 or 443
 ```bash
-svdb -p 80,443 -select name
+svq -p 80,443 -select name
 ```
 
 ## the `-j` flag, with `jq`
 
-You can use `jq` to filter the output of `svdb` when using the `-j` flag.
+You can use `jq` to filter the output of `svq` when using the `-j` flag.
 
 
 #### Get all services with port 80 or 443
 ```bash
-svdb -j -p 80,443 | jq '.[] | select(.name == "http")'
+svq -j -p 80,443 | jq '.[] | select(.name == "http")'
 ```
 
 #### Get all ports for services that match "http"
 ```bash
-svdb -j -m "http" | jq -r '.[].port'
+svq -j -m "http" | jq -r '.[].port'
 ```
 
 #### Get just the first description for services on port 443
 ```bash
-svdb -j -p 443 | jq -r '.[].description' | head -n 1
+svq -j -p 443 | jq -r '.[].description' | head -n 1
 ```
 
 ## License
