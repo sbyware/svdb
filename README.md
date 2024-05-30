@@ -9,13 +9,13 @@ service query engine
 #### x64
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-x64.exe -o svq.exe
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-x64.exe -o ~/.svq.exe && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 #### ARM
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-arm64.exe -o svq.exe
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-arm64.exe -o svq.exe && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 ### Linux
@@ -23,13 +23,13 @@ curl -L https://github.com/sbyware/svq/releases/download/latest/svq-windows-arm6
 #### x64
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-x64 -o ~/.local/bin/svq
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-x64 -o ~/.local/bin/svq && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 #### ARM
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-arm64 -o ~/.local/bin/svq
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-arm64 -o ~/.local/bin/svq && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 ### macOS
@@ -37,26 +37,13 @@ curl -L https://github.com/sbyware/svq/releases/download/latest/svq-linux-arm64 
 #### Intel (x64)
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-x64 -o ~/.local/bin/svq
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-x64 -o ~/.local/bin/svq && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 #### Apple Silicon (ARM)
 
 ```bash
-curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-arm64 -o ~/.local/bin/svq
-```
-
-## Usage
-
-```bash
-svq [-p <port,numbers,comma-separated>] [-m <regex-to-match>]
-```
-
-
-Example:
-
-```bash
-svq -p 80,443 -m "http"
+curl -L https://github.com/sbyware/svq/releases/download/latest/svq-macos-arm64 -o ~/.local/bin/svq && curl -L https://raw.githubusercontent.com/sbyware/svq/main/db.json -o ~/.svq
 ```
 
 ## Configuration
